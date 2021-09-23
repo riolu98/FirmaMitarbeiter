@@ -26,14 +26,7 @@ namespace FirmaMitarbeiter.Controllers
         }
         public ActionResult MitarbeiterStatistik()
         {
-            double totalWage = 0;
-            foreach (var mitarbeiter in mitarbeiterListe.MitarbeiterListe) {
-                totalWage += mitarbeiter.BruttoGehalt;
-            }
-
-            double averageWage = totalWage / mitarbeiterListe.MitarbeiterListe.Count;
-
-            ViewBag.AverageWage = averageWage;
+            ViewBag.AverageWage = CalculateAverageWage();
             return View();
         }
 
@@ -43,6 +36,17 @@ namespace FirmaMitarbeiter.Controllers
             mitarbeiterListe.MitarbeiterListe.Add(model);
 
             return View("MitarbeiterListe", mitarbeiterListe);
+        }
+
+        private double CalculateAverageWage()
+        {
+            double totalWage = 0;
+            foreach (var mitarbeiter in mitarbeiterListe.MitarbeiterListe)
+            {
+                totalWage += mitarbeiter.BruttoGehalt;
+            }
+
+            return totalWage / mitarbeiterListe.MitarbeiterListe.Count;
         }
     }
 }
