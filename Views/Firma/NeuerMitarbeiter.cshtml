@@ -3,13 +3,18 @@
 @using (Html.BeginForm("AddEmployee", "Firma"))
 {
     @Html.LabelFor(m => m.LastName)
+    @Html.Raw("<br>")
     @Html.TextBoxFor(m => m.LastName)
     @Html.Raw("<br>")
     @Html.LabelFor(m => m.FirstName)
+    @Html.Raw("<br>")
     @Html.TextBoxFor(m => m.FirstName)
     @Html.Raw("<br>")
     @Html.LabelFor(m => m.BruttoGehalt)
+    @Html.Raw("<br>")
     @Html.TextBoxFor(m => m.BruttoGehalt)
     @Html.Raw("<br>")
+    @Html.Raw("<br>")
+
     <input type="submit" value="Hinzufügen" id="btnSubmit" />
 }

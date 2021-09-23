@@ -7,10 +7,7 @@ namespace FirmaMitarbeiter.Classes
 {
     public abstract class Mitarbeiter
     {
-        public Mitarbeiter()
-        {
-
-        }
+        public Mitarbeiter() { }
 
         public Mitarbeiter(string firstName, string lastName)
         {

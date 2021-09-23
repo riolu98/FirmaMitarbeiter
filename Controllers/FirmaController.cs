@@ -22,7 +22,7 @@ namespace FirmaMitarbeiter.Controllers
         }
         public ActionResult MitarbeiterListe()
         {
-            return View(mitarbeiterListe);
+            return View("MitarbeiterListe", mitarbeiterListe);
         }
         public ActionResult MitarbeiterStatistik()
         {
@@ -37,11 +37,12 @@ namespace FirmaMitarbeiter.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult AddEmployee(MitarbeiterViewModel model)
         {
             mitarbeiterListe.MitarbeiterListe.Add(model);
 
-            return View("Firma", new MitarbeiterViewModel());
+            return View("MitarbeiterListe", mitarbeiterListe);
         }
     }
 }
