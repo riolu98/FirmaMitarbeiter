@@ -13,11 +13,11 @@ namespace FirmaMitarbeiter.Classes
         {
             this.FirstName = firstName;
             this.LastName = lastName;
-            this.Stundenlohn = stundenlohn;
-            this.Stundenzahl = stundenzahl;
+            this.Stundenlohn = stundenlohn > 0 ? stundenlohn : 1;
+            this.Stundenzahl = stundenzahl >= 0 ? stundenzahl : 0;
         }
 
-        private double stundenlohn = 0;
+        private double stundenlohn = 1;
         public double Stundenlohn
         {
             get { return stundenlohn; }
@@ -38,13 +38,18 @@ namespace FirmaMitarbeiter.Classes
             get { return stundenzahl; }
             set
             {
-                if (value <= 0)
+                if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException("Only values greater than zero are allowed");
+                    throw new ArgumentOutOfRangeException("Only positive values are allowed");
                 }
 
                 stundenzahl = value;
             }
+        }
+
+        public override double GetBrutto()
+        {
+            return Stundenzahl * Stundenlohn;
         }
     }
 }

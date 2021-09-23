@@ -1,4 +1,5 @@
-﻿using FirmaMitarbeiter.Models;
+﻿using FirmaMitarbeiter.Classes;
+using FirmaMitarbeiter.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace FirmaMitarbeiter.Controllers
 {
     public class FirmaController : Controller
     {
+        //private static Firma Firma = new Firma(); 
+
         private static MitarbeiterListeViewModel mitarbeiterListe = new MitarbeiterListeViewModel();
 
         public ActionResult Firma()

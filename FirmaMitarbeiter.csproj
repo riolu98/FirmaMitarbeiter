@@ -122,6 +122,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Classes\Angestellter.cs" />
     <Compile Include="Classes\Arbeiter.cs" />
+    <Compile Include="Classes\Firma.cs" />
     <Compile Include="Classes\Mitarbeiter.cs" />
     <Compile Include="Controllers\FirmaController.cs" />
     <Compile Include="Global.asax.cs">

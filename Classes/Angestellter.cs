@@ -16,7 +16,7 @@ namespace FirmaMitarbeiter.Classes
             this.BruttoGehalt = bruttoGehalt;
         }
 
-        private double bruttoGehalt = 0;
+        private double bruttoGehalt = 1;
         public double BruttoGehalt
         {
             get { return bruttoGehalt; }
@@ -29,6 +29,11 @@ namespace FirmaMitarbeiter.Classes
 
                 bruttoGehalt = value;
             }
+        }
+
+        public override double GetBrutto()
+        {
+            return BruttoGehalt;
         }
     }
 }
