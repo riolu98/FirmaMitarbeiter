@@ -1,0 +1,6 @@
+﻿@model FirmaMitarbeiter.Models.MitarbeiterListeViewModel
+
+@foreach (var mitarbeiter in Model.MitarbeiterListe)
+{
+    <p class="myContent">@mitarbeiter.LastName, @mitarbeiter.FirstName: @mitarbeiter.BruttoGehalt</p>
+}
